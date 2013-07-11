@@ -198,3 +198,55 @@ Processing by ProjectsController#show as HTML
   Rendered projects/show.html.erb within layouts/application (0.3ms)
 Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.1ms)
   [1m[35m (1.7ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2013-07-10 17:16:24 -0700
+Processing by ProjectsController#index as HTML
+  Rendered projects/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+Started GET "/projects/new" for 127.0.0.1 at 2013-07-10 17:16:24 -0700
+Processing by ProjectsController#new as HTML
+  Rendered projects/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 13ms (Views: 7.2ms | ActiveRecord: 0.8ms)
+Started POST "/projects" for 127.0.0.1 at 2013-07-10 17:16:24 -0700
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>"TextMate 2", "description"=>"A text-editor for OS X"}, "commit"=>"Create Project"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (25.6ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 11 Jul 2013 00:16:24 UTC +00:00], ["description", "A text-editor for OS X"], ["name", "TextMate 2"], ["updated_at", Thu, 11 Jul 2013 00:16:24 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/projects/1
+Completed 302 Found in 28ms (ActiveRecord: 25.8ms)
+Started GET "/projects/1" for 127.0.0.1 at 2013-07-10 17:16:24 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."name" = 'TextMate 2' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2013-07-10 17:18:53 -0700
+Processing by ProjectsController#index as HTML
+  Rendered projects/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 6ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+Started GET "/projects/new" for 127.0.0.1 at 2013-07-10 17:18:53 -0700
+Processing by ProjectsController#new as HTML
+  Rendered projects/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 12ms (Views: 6.8ms | ActiveRecord: 0.7ms)
+Started POST "/projects" for 127.0.0.1 at 2013-07-10 17:18:53 -0700
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "project"=>{"name"=>"TextMate 2", "description"=>"A text-editor for OS X"}, "commit"=>"Create Project"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (25.8ms)[0m  [1mINSERT INTO "projects" ("created_at", "description", "name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Thu, 11 Jul 2013 00:18:53 UTC +00:00], ["description", "A text-editor for OS X"], ["name", "TextMate 2"], ["updated_at", Thu, 11 Jul 2013 00:18:53 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/projects/1
+Completed 302 Found in 29ms (ActiveRecord: 25.9ms)
+Started GET "/projects/1" for 127.0.0.1 at 2013-07-10 17:18:53 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."name" = 'TextMate 2' LIMIT 1
+  [1m[36m (1.6ms)[0m  [1mrollback transaction[0m
