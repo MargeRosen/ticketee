@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
 	def index
-	end	
+    @projects = Project.all
+	end
 
 	def new  #blank form
 		logger.info "message for log file:  processed new method in ProjectsController"
@@ -8,13 +9,13 @@ class ProjectsController < ApplicationController
 	end
 
 	def create  #based on user input
-  	@project = Project.new(params[:project]) 
+  	@project = Project.new(params[:project])
   	if @project.save  # returns true or false
     	flash[:notice] = "Project has been created."
     	redirect_to @project
   	else
    		flash[:notice] = "Project has NOT been created."
-   		render :action => "new" 
+   		render :action => "new"
   	end
 	end
 
