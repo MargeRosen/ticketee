@@ -301,3 +301,35 @@ Served asset /jquery_ujs.js - 304 Not Modified (0ms)
 
 Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-07-11 14:02:46 -0700
 Served asset /projects.js - 304 Not Modified (0ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2013-07-11 14:27:08 -0700
+Processing by ProjectsController#new as HTML
+message for log file:  processed new method in ProjectsController
+  Rendered projects/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 14ms (Views: 8.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-11 14:27:08 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-11 14:27:08 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-11 14:27:08 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-07-11 14:27:08 -0700
+Served asset /projects.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-11 14:27:08 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-07-11 14:27:08 -0700
+Served asset /projects.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
