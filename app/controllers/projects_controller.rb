@@ -1,4 +1,9 @@
 class ProjectsController < ApplicationController
+
+  before_filter :find_project, :only => [:show,
+                                       :edit,
+                                       :update,
+                                       :destroy]
 	def index
     @projects = Project.all
 	end
@@ -18,17 +23,17 @@ class ProjectsController < ApplicationController
    		render :action => "new"
   	end
 	end
-#This needs to be DRYed
+#The @project variable is now setup with the before_filter
 	def show
-  	@project = Project.find(params[:id]) #find method on class Project using ActiveRecord
+  	#@project = Project.find(params[:id]) #find method on class Project using ActiveRecord
 	end
 
   def edit
-    @project = Project.find(params[:id])
+    #@project = Project.find(params[:id])
   end
 
   def update
-    @project = Project.find(params[:id])
+    #@project = Project.find(params[:id])
     if @project.update_attributes(params[:project])
       flash[:notice] = "Project has been updated."
       redirect_to @project
@@ -39,9 +44,18 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    @project = Project.find(params[:id])
+    #@project = Project.find(params[:id])
     @project.destroy
     flash[:notice] = "Project has been deleted."
+    redirect_to projects_path
+  end
+
+  private  # so the controller doesn’t respond to this method as an action.
+  def find_project
+    @project = Project.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "The project you were looking" +
+                    " for could not be found."
     redirect_to projects_path
   end
 end
