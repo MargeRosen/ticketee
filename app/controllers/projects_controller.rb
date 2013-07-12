@@ -18,9 +18,23 @@ class ProjectsController < ApplicationController
    		render :action => "new"
   	end
 	end
-
+#This needs to be DRYed
 	def show
   	@project = Project.find(params[:id]) #find method on class Project using ActiveRecord
 	end
 
+  def edit
+    @project = Project.find(params[:id])
+  end
+
+  def update
+    @project = Project.find(params[:id])
+    if @project.update_attributes(params[:project])
+      flash[:notice] = "Project has been updated."
+      redirect_to @project
+    else
+      flash[:alert] = "Project has not been updated."
+      render :action => "edit"
+    end
+  end
 end
