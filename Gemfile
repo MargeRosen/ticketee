@@ -40,6 +40,8 @@ gem 'jquery-rails'
 # gem 'debugger'
 group :test, :development do
   gem 'rspec-rails', '~> 2.11'
+  gem 'launchy'
+  gem 'pry-rails' #REPL - read evaluate print loop
 end
 group :test do
   gem 'capybara', '1.1.2'
