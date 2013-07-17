@@ -1,5 +1,8 @@
 require 'spec_helper'
 
+require 'simplecov'
+SimpleCov.start
+
 feature "Editing tickets" do
   let!(:project) { Factory(:project) }
   let!(:user) { Factory(:confirmed_user) }
