@@ -9,6 +9,8 @@ require 'rspec/autorun'
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 RSpec.configure do |config|
+  # Makes the sign-in method available
+  config.include Devise::TestHelpers, :type => :controller
   config.before do
     ActionMailer::Base.deliveries.clear
   end
