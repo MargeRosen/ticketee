@@ -51,16 +51,17 @@ class ProjectsController < ApplicationController
     redirect_to projects_path
   end
 
-  private
+  #  Moved def authorize_admin! to application_controller.rb
+  #private
 
-  def authorize_admin!
-    authenticate_user!
-    unless current_user.admin?
-      flash[:alert] = "You must be an admin to do that."
-      redirect_to root_path
+  #def authorize_admin!
+  #  authenticate_user!
+  #  unless current_user.admin?
+  #    flash[:alert] = "You must be an admin to do that."
+  #    redirect_to root_path
       # attr_reader :attr_namesedirect_to root_path
-    end
-  end
+  #  end
+  #end
 
   private  # so the controller doesn’t respond to this method as an action.
   def find_project
