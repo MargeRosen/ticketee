@@ -1,6 +1,12 @@
 Ticketee::Application.routes.draw do
+
 #  get "/admin/users/index" #only responds to URL + HTTP method
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
+
+# defines a new route that responds to only GET requests to /awaiting_confirmation
+  get '/awaiting_confirmation',
+    :to => "users#confirmation",
+    :as => 'confirm_user'
 
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
