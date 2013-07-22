@@ -1,12 +1,12 @@
 class ProjectsController < ApplicationController
 
   before_filter :authorize_admin!, :except => [:index, :show]
-  before_filter :authenticate_user!, :only => [:show]
+  before_filter :authenticate_user!, :only => [:index, :show]
   before_filter :find_project, :only => [:show, :edit,
                                        :update, :destroy]
 
 	def index
-    @projects = Project.all
+    @projects = Project.for(current_user).all
 	end
 
 	def new  #blank form
@@ -28,11 +28,12 @@ class ProjectsController < ApplicationController
 	def show
   	#@project = Project.find(params[:id]) #find method on class Project using ActiveRecord
     #@project = Project.viewable_by(current_user).find(params[:id])
-    @project = if current_user.admin?
-      Project.find(params[:id])
-    else
-      Project.viewable_by(current_user).find(params[:id])
-    end
+    #@project = if current_user.admin?
+     # Project.find(params[:id])
+    #else
+      #Project.viewable_by(current_user).find(params[:id])
+    #end
+    @project = Project.for(current_user).find(params[:id])
   end
 
   def edit
