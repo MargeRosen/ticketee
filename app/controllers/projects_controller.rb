@@ -1,10 +1,10 @@
 class ProjectsController < ApplicationController
 
   before_filter :authorize_admin!, :except => [:index, :show]
-  before_filter :find_project, :only => [:show,
-                                       :edit,
-                                       :update,
-                                       :destroy]
+  before_filter :authenticate_user!, :only => [:show]
+  before_filter :find_project, :only => [:show, :edit,
+                                       :update, :destroy]
+
 	def index
     @projects = Project.all
 	end
@@ -27,7 +27,13 @@ class ProjectsController < ApplicationController
 #The @project variable is now setup with the before_filter
 	def show
   	#@project = Project.find(params[:id]) #find method on class Project using ActiveRecord
-	end
+    #@project = Project.viewable_by(current_user).find(params[:id])
+    @project = if current_user.admin?
+      Project.find(params[:id])
+    else
+      Project.viewable_by(current_user).find(params[:id])
+    end
+  end
 
   def edit
     #@project = Project.find(params[:id])

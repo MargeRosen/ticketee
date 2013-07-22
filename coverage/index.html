@@ -14,27 +14,27 @@
       <img src="./assets/0.7.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2013-07-18T14:35:29-07:00">2013-07-18T14:35:29-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2013-07-19T19:49:49-07:00">2013-07-19T19:49:49-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">100.0%</span></span>
+    (<span class="covered_percent"><span class="green">97.92%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.12
+         1.14
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>5</b> files in total.
-    <b>91</b> relevant lines. 
-    <span class="green"><b>91</b> lines covered</span> and
-    <span class="red"><b>0</b> lines missed </span>
+    <b>96</b> relevant lines. 
+    <span class="green"><b>94</b> lines covered</span> and
+    <span class="red"><b>2</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -52,12 +52,12 @@
       
       <tr>
         <td class="strong"><a href="#f02e11fecbc163dff707a93111e699199e80a945" class="src_link" title="spec/integration/hidden_links_spec.rb">spec/integration/hidden_links_spec.rb</a></td>
-        <td class="green strong">100.0 %</td>
+        <td class="green strong">94.59 %</td>
         <td>60</td>
         <td>37</td>
-        <td>37</td>
-        <td>0</td>
-        <td>1.5</td>
+        <td>35</td>
+        <td>2</td>
+        <td>1.4</td>
       </tr>
       
       <tr>
@@ -83,19 +83,19 @@
       <tr>
         <td class="strong"><a href="#7aedc375af5d78881fe841628ee1081bd0475388" class="src_link" title="spec/integration/viewing_projects_spec.rb">spec/integration/viewing_projects_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>10</td>
-        <td>8</td>
-        <td>8</td>
+        <td>19</td>
+        <td>11</td>
+        <td>11</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>1.2</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#84c7d987259756f5d1201e69f23cb019a3407ad0" class="src_link" title="spec/integration/viewing_tickets_spec.rb">spec/integration/viewing_tickets_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>34</td>
-        <td>18</td>
-        <td>18</td>
+        <td>35</td>
+        <td>20</td>
+        <td>20</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -119,11 +119,11 @@
         <div class="source_table" id="f02e11fecbc163dff707a93111e699199e80a945">
   <div class="header">
     <h3>spec/integration/hidden_links_spec.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="green">94.59 %</span> covered</h4>
     <div>
       <b>37</b> relevant lines. 
-      <span class="green"><b>37</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <span class="green"><b>35</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
   
@@ -328,8 +328,8 @@
           <code class="ruby">      visit project_path(project)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="34">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="34">
+          
           
           <code class="ruby">      assert_no_link_for &quot;Edit Project&quot;</code>
         </li>
@@ -358,8 +358,8 @@
           <code class="ruby">      visit project_path(project)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="39">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="39">
+          
           
           <code class="ruby">      assert_no_link_for &quot;Delete Project&quot;</code>
         </li>
@@ -787,8 +787,8 @@
     <h3>spec/integration/viewing_projects_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>8</b> relevant lines. 
-      <span class="green"><b>8</b> lines covered</span> and
+      <b>11</b> relevant lines. 
+      <span class="green"><b>11</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -802,55 +802,109 @@
           <code class="ruby">require &#39;spec_helper&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="2">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="2">
           
-          <code class="ruby">feature &quot;Viewing projects&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">  scenario &quot;Listing all projects&quot; do</code>
+          <code class="ruby">feature &quot;Viewing projects&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="4">
+          <span class="hits">2</span>
           
-          <code class="ruby">    project = Factory.create(:project, :name =&gt; &quot;TextMate 2&quot;)</code>
+          <code class="ruby">  let!(:user) { Factory(:confirmed_user) }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="5">
+          <span class="hits">2</span>
           
-          <code class="ruby">    visit &#39;/&#39;</code>
+          <code class="ruby">  let!(:project) { Factory(:project) }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="6">
           
-          <code class="ruby">    save_and_open_page   # Really helpful in debugging</code>
+          
+          <code class="ruby"># let!(:project_2) { Factory(:project, :name =&gt; &quot;Internet Explorer&quot;) }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="7">
           
-          <code class="ruby">    click_link &#39;TextMate 2&#39;</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">    page.current_url.should == project_url(project)</code>
+          <code class="ruby">  before do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    sign_in_as!(user)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    define_permission!(user, :view, project)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scenario &quot;Listing all projects&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    visit &#39;/&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">    #save_and_open_page   # Really helpful in debugging</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_link project.name</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    page.current_url.should == project_url(project)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">end</code>
@@ -865,8 +919,8 @@
     <h3>spec/integration/viewing_tickets_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>18</b> relevant lines. 
-      <span class="green"><b>18</b> lines covered</span> and
+      <b>20</b> relevant lines. 
+      <span class="green"><b>20</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -907,172 +961,178 @@
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">    user = Factory(:user)</code>
+          <code class="ruby">    user = Factory(:confirmed_user)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">    ticket = Factory(:ticket,</code>
+          <code class="ruby">    define_permission!(user, &quot;view&quot;, textmate_2)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">            :project =&gt; textmate_2,</code>
+          <code class="ruby">    ticket = Factory(:ticket,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
           
           
-          <code class="ruby">            :title =&gt; &quot;Make it shiny!&quot;,</code>
+          <code class="ruby">            :project =&gt; textmate_2,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
           
           
+          <code class="ruby">            :title =&gt; &quot;Make it shiny!&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
           <code class="ruby">            :description =&gt; &quot;Gradients! Starbursts! Oh my!&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
+        <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
           <code class="ruby">    ticket.update_attribute(:user, user)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
+        <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
           <code class="ruby">    internet_explorer = Factory(:project, :name =&gt; &quot;Internet Explorer&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="15">
+        <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
           <code class="ruby">    Factory(:ticket,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby">            :project =&gt; internet_explorer,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="18">
           
           
           <code class="ruby">            :title =&gt; &quot;Standards compliance&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">            :description =&gt; &quot;Isn&#39;t a joke.&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    sign_in_as!(user)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
+        <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
           <code class="ruby">    visit &#39;/&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="23">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  scenario &quot;Viewing tickets for a given project&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
-          <code class="ruby">    click_link &quot;TextMate 2&quot;</code>
+          <code class="ruby">  scenario &quot;Viewing tickets for a given project&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
-          <code class="ruby">    page.should have_content(&quot;Make it shiny!&quot;)</code>
+          <code class="ruby">    click_link &quot;TextMate 2&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
+          <code class="ruby">    page.should have_content(&quot;Make it shiny!&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
           <code class="ruby">    page.should_not have_content(&quot;Standards compliance&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="28">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="28">
+        <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
           <code class="ruby">    click_link &quot;Make it shiny!&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
+        <li class="covered" data-hits="1" data-linenumber="30">
           <span class="hits">1</span>
           
           <code class="ruby">    within(&quot;#ticket h2&quot;) do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="30">
+        <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
           
           <code class="ruby">      page.should have_content(&quot;Make it shiny!&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="never" data-hits="" data-linenumber="32">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="32">
+        <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
           <code class="ruby">    page.should have_content(&quot;Gradients! Starbursts! Oh my!&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="never" data-hits="" data-linenumber="34">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="35">
           
           
           <code class="ruby">end</code>
