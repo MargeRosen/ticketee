@@ -7,13 +7,13 @@ class TicketsController < ApplicationController
   before_filter :authorize_update!, :only => [:edit, :update]
   before_filter :authorize_delete!, :only => [:destroy]
 
-  def find_ticket
-    @ticket = @project.tickets.find(params[:id])
-  end
+  #def find_ticket
+    #@ticket = @project.tickets.find(params[:id])
+  #end
 
   def new
     @ticket = @project.tickets.build
-    @ticket.assets.build
+    #@ticket.assets.build
   end
 
   def create
@@ -33,8 +33,8 @@ class TicketsController < ApplicationController
   end
 
   def show
-    @comment = @ticket.comments.build
-    @states = State.all
+    #@comment = @ticket.comments.build
+    #@states = State.all
   end
 
   def edit

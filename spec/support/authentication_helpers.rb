@@ -1,11 +1,5 @@
 module AuthenticationHelpers
 
-  def define_permission!(user, action, thing)
-    Permission.create!(:user => user,
-                       :action => action,
-                       :thing => thing)
-  end
-
   def sign_in_as!(user)
     visit '/users/sign_in'
     fill_in "Email", :with => user.email

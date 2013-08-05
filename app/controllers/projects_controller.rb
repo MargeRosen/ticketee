@@ -10,7 +10,6 @@ class ProjectsController < ApplicationController
 	end
 
 	def new  #blank form
-		logger.info "message for log file:  processed new method in ProjectsController"
 		@project = Project.new
 	end
 
@@ -33,7 +32,8 @@ class ProjectsController < ApplicationController
     #else
       #Project.viewable_by(current_user).find(params[:id])
     #end
-    @project = Project.for(current_user).find(params[:id])
+    #@project = Project.for(current_user).find(params[:id])
+    @tickets = @project.tickets
   end
 
   def edit
@@ -72,10 +72,19 @@ class ProjectsController < ApplicationController
 
   private  # so the controller doesn’t respond to this method as an action.
   def find_project
-    @project = Project.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
+    #@project = Project.find(params[:id])
+    @project = Project.for(current_user).find(params[:id])
+  rescue ActiveRecord::RecordNotFound
     flash[:alert] = "The project you were looking" +
                     " for could not be found."
     redirect_to projects_path
+  end
+
+  def authorize_admin!
+    authenticate_user!
+    unless current_user.admin?
+      flash[:alert] = "You must be an admin to do that."
+      redirect_to root_path
+    end
   end
 end

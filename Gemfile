@@ -37,12 +37,18 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'
+
+group :development do
+  gem 'coffee-rails-source-maps'
+end
+
 group :test, :development do
   gem 'rspec-rails', '~> 2.11'
   gem 'launchy'
   gem 'pry-rails' #REPL - read evaluate print loop
 end
+
 group :test do
   gem 'capybara', '1.1.2'
   gem 'factory_girl', '2.6.4'

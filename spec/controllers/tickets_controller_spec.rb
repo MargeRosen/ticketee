@@ -56,17 +56,25 @@ describe TicketsController do
       it "cannot delete a ticket without permission" do
         delete :destroy, { :project_id => project.id, :id => ticket.id }
         response.should redirect_to(project)
-        flash[:alert].should eql("You cannot delete tickets from this project.")
+        message = "You cannot delete tickets from this project."
+        flash[:alert].should eql(message)
       end
 
-      it "can create tickets, but not tag them" do
-        Permission.create(:user => user, :thing => project, :action => "create tickets")
-        post :create, :ticket => { :title => "New ticket!",
-                                   :description => "Brand spankin' new",
-                                   :tag_names => "these are tags"
-                                 },
-                      :project_id => project.id
-        Ticket.last.tags.should be_empty
+      #it "can create tickets, but not tag them" do
+      #  Permission.create(:user => user, :thing => project, :action => "create tickets")
+      #  post :create, :ticket => { :title => "New ticket!",
+      #                             :description => "Brand spankin' new",
+      #                             :tag_names => "these are tags"
+      #                           },
+      #                :project_id => project.id
+       # Ticket.last.tags.should be_empty
+      #end
+
+      def authorize_delete!
+        if !current_user.admin? && cannot?(:"delete tickets", @project)
+          flash[:alert] = "You cannot delete tickets from this project."
+          redirect_to @project
+        end
       end
     end
   end
