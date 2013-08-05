@@ -2792,3 +2792,395 @@ Connecting to database specified by database.yml
   [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130716224144')
   [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130716234840')[0m
   [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130717205652')
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'admin@ticketee.com' LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."confirmation_token" = '5ZZpFvDENe2wZsQEHRS1' LIMIT 1
+Binary data inserted for `string` type on column `encrypted_password`
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "users" ("admin", "confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "last_sign_in_at", "last_sign_in_ip", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "unconfirmed_email", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["admin", false], ["confirmation_sent_at", Mon, 05 Aug 2013 21:50:46 UTC +00:00], ["confirmation_token", "5ZZpFvDENe2wZsQEHRS1"], ["confirmed_at", nil], ["created_at", Mon, 05 Aug 2013 21:50:46 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "admin@ticketee.com"], ["encrypted_password", "$2a$10$WrPGoVX9sWtv.pdrvFvz0e/vl9SUI4mVSBYyjBEX3wWL9VpEfUbja"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["unconfirmed_email", nil], ["updated_at", Mon, 05 Aug 2013 21:50:46 UTC +00:00]]
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/devise-2.1.0/app/views/devise/mailer/confirmation_instructions.html.erb (1.4ms)
+
+Sent mail to admin@ticketee.com (10ms)
+Date: Mon, 05 Aug 2013 14:50:46 -0700
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: admin@ticketee.com
+Message-ID: <52001e368faff_d16e3fbfdcc606d4517d1@MasterclassUs-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome admin@ticketee.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=5ZZpFvDENe2wZsQEHRS1">Confirm my account</a></p>
+
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  UPDATE "users" SET "admin" = 't', "confirmation_token" = NULL, "confirmed_at" = '2013-08-05 21:50:46.599435', "updated_at" = '2013-08-05 21:50:46.600138' WHERE "users"."id" = 1
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mProject Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "projects" WHERE "projects"."name" = 'Ticketee Beta' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "projects" ("created_at", "description", "name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Mon, 05 Aug 2013 21:50:46 UTC +00:00], ["description", nil], ["name", "Ticketee Beta"], ["updated_at", Mon, 05 Aug 2013 21:50:46 UTC +00:00]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-05 15:08:42 -0700
+Processing by ProjectsController#index as HTML
+Completed 401 Unauthorized in 4ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-08-05 15:08:42 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/devise-2.1.0/app/views/devise/shared/_links.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/devise-2.1.0/app/views/devise/sessions/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 93ms (Views: 76.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-05 15:08:42 -0700
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-08-05 15:08:42 -0700
+Served asset /projects.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/admin/users.css?body=1" for 127.0.0.1 at 2013-08-05 15:08:42 -0700
+Served asset /admin/users.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2013-08-05 15:08:42 -0700
+Served asset /tickets.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-08-05 15:08:42 -0700
+Served asset /users.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-05 15:08:42 -0700
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-05 15:08:42 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/admin/users.js?body=1" for 127.0.0.1 at 2013-08-05 15:08:42 -0700
+Served asset /admin/users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-08-05 15:08:42 -0700
+Served asset /projects.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2013-08-05 15:08:42 -0700
+Served asset /tickets.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-08-05 15:08:42 -0700
+Served asset /users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-05 15:08:42 -0700
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-08-05 15:09:14 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ebg4rTfRmWkgC3FdqcHFsBkWiteMMn9JSHb+zTw3XlE=", "user"=>{"email"=>"user@ticketee.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'user@ticketee.com' LIMIT 1[0m
+Completed 401 Unauthorized in 3ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ebg4rTfRmWkgC3FdqcHFsBkWiteMMn9JSHb+zTw3XlE=", "user"=>{"email"=>"user@ticketee.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/devise-2.1.0/app/views/devise/shared/_links.erb (0.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/devise-2.1.0/app/views/devise/sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 87ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-05 15:09:14 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.css?body=1" for 127.0.0.1 at 2013-08-05 15:09:14 -0700
+Served asset /admin/users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-08-05 15:09:14 -0700
+Served asset /projects.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-05 15:09:14 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-08-05 15:09:14 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2013-08-05 15:09:14 -0700
+Served asset /tickets.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-05 15:09:14 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.js?body=1" for 127.0.0.1 at 2013-08-05 15:09:14 -0700
+Served asset /admin/users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-08-05 15:09:14 -0700
+Served asset /projects.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2013-08-05 15:09:14 -0700
+Served asset /tickets.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-08-05 15:09:14 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-05 15:09:14 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-08-05 15:10:10 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ebg4rTfRmWkgC3FdqcHFsBkWiteMMn9JSHb+zTw3XlE=", "user"=>{"email"=>"user@ticketee.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'user@ticketee.com' LIMIT 1
+Completed 401 Unauthorized in 1ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ebg4rTfRmWkgC3FdqcHFsBkWiteMMn9JSHb+zTw3XlE=", "user"=>{"email"=>"user@ticketee.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/devise-2.1.0/app/views/devise/shared/_links.erb (0.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/devise-2.1.0/app/views/devise/sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 83ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-05 15:10:10 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-08-05 15:10:10 -0700
+Served asset /projects.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.css?body=1" for 127.0.0.1 at 2013-08-05 15:10:10 -0700
+Served asset /admin/users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2013-08-05 15:10:10 -0700
+Served asset /tickets.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-05 15:10:10 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-08-05 15:10:10 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-05 15:10:10 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-08-05 15:10:10 -0700
+Served asset /projects.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.js?body=1" for 127.0.0.1 at 2013-08-05 15:10:10 -0700
+Served asset /admin/users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-08-05 15:10:10 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2013-08-05 15:10:10 -0700
+Served asset /tickets.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-05 15:10:10 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2013-08-05 15:10:31 -0700
+
+ActionController::RoutingError (No route matches [GET] "/users"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-05 15:10:32 -0700
+Processing by ProjectsController#index as HTML
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-08-05 15:10:32 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/devise-2.1.0/app/views/devise/shared/_links.erb (0.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/devise-2.1.0/app/views/devise/sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 20ms (Views: 19.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-05 15:10:32 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2013-08-05 15:10:32 -0700
+Served asset /tickets.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-05 15:10:32 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-08-05 15:10:32 -0700
+Served asset /projects.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-08-05 15:10:32 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.css?body=1" for 127.0.0.1 at 2013-08-05 15:10:32 -0700
+Served asset /admin/users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-05 15:10:32 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.js?body=1" for 127.0.0.1 at 2013-08-05 15:10:32 -0700
+Served asset /admin/users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-08-05 15:10:32 -0700
+Served asset /projects.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-08-05 15:10:32 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2013-08-05 15:10:32 -0700
+Served asset /tickets.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-05 15:10:32 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-08-05 15:10:58 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ebg4rTfRmWkgC3FdqcHFsBkWiteMMn9JSHb+zTw3XlE=", "user"=>{"email"=>"admin@ticketee.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@ticketee.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2013-08-05 22:10:58.819871', "current_sign_in_at" = '2013-08-05 22:10:58.819871', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2013-08-05 22:10:58.820926' WHERE "users"."id" = 1[0m
+  [1m[35m (2.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 119ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-05 15:10:58 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" 
+  Rendered projects/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 24ms (Views: 17.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-05 15:10:58 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.css?body=1" for 127.0.0.1 at 2013-08-05 15:10:58 -0700
+Served asset /admin/users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2013-08-05 15:10:58 -0700
+Served asset /tickets.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-08-05 15:10:58 -0700
+Served asset /projects.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-08-05 15:10:58 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-05 15:10:58 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-05 15:10:58 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.js?body=1" for 127.0.0.1 at 2013-08-05 15:10:58 -0700
+Served asset /admin/users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-08-05 15:10:58 -0700
+Served asset /projects.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2013-08-05 15:10:58 -0700
+Served asset /tickets.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-08-05 15:10:58 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-05 15:10:58 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "permissions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "thing_id" integer, "thing_type" varchar(255), "action" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "tickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "project_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) [0m
+  [1m[35m (0.9ms)[0m  CREATE INDEX "index_tickets_on_project_id" ON "tickets" ("project_id")
+  [1m[36m (0.8ms)[0m  [1mCREATE INDEX "index_tickets_on_user_id" ON "tickets" ("user_id")[0m
+  [1m[35m (1.9ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "confirmation_token" varchar(255), "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar(255), "admin" boolean DEFAULT 'f') 
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130719154524')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130710231522')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130715202414')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130716220503')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130716224144')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130716234840')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130717205652')
