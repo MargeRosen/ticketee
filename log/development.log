@@ -3249,3 +3249,1033 @@ Connecting to database specified by database.yml
   [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130716234840')[0m
   [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130717205652')
   [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130719154524')[0m
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-05 16:23:31 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" 
+  Rendered projects/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 82ms (Views: 17.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-05 16:23:31 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.css?body=1" for 127.0.0.1 at 2013-08-05 16:23:31 -0700
+Served asset /admin/users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-08-05 16:23:31 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-05 16:23:31 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2013-08-05 16:23:31 -0700
+Served asset /tickets.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-08-05 16:23:31 -0700
+Served asset /projects.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-05 16:23:31 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.js?body=1" for 127.0.0.1 at 2013-08-05 16:23:31 -0700
+Served asset /admin/users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-08-05 16:23:31 -0700
+Served asset /projects.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2013-08-05 16:23:31 -0700
+Served asset /tickets.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-08-05 16:23:31 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-05 16:23:31 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/projects/3" for 127.0.0.1 at 2013-08-05 16:23:34 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", "3"]]
+  [1m[36mPermission Load (0.1ms)[0m  [1mSELECT "permissions".* FROM "permissions" WHERE "permissions"."user_id" = 1[0m
+  Rendered projects/show.html.erb within layouts/application (14.9ms)
+Completed 500 Internal Server Error in 23ms
+
+ActionView::Template::Error (undefined method `has_attached_file' for #<Class:0x007f9012a5b3e8>):
+    10:   <%= link_to "New Ticket", new_project_ticket_path(@project) %>
+    11: <% end %>
+    12: <ul id='tickets'>
+    13:   <% @project.tickets.each do |ticket| %>
+    14:     <li>
+    15:       #<%= ticket.id %>
+    16:       <%= link_to ticket.title, [@project, ticket] %>
+  app/models/ticket.rb:8:in `<class:Ticket>'
+  app/models/ticket.rb:1:in `<top (required)>'
+  app/views/projects/show.html.erb:13:in `_app_views_projects_show_html_erb__4019741000873484689_70128382036500'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (44.4ms)
+
+
+Started GET "/projects/2" for 127.0.0.1 at 2013-08-05 16:24:00 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mPermission Load (0.1ms)[0m  SELECT "permissions".* FROM "permissions" WHERE "permissions"."user_id" = 1
+  Rendered projects/show.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `has_attached_file' for #<Class:0x007f900cb7fa18>):
+    10:   <%= link_to "New Ticket", new_project_ticket_path(@project) %>
+    11: <% end %>
+    12: <ul id='tickets'>
+    13:   <% @project.tickets.each do |ticket| %>
+    14:     <li>
+    15:       #<%= ticket.id %>
+    16:       <%= link_to ticket.title, [@project, ticket] %>
+  app/models/ticket.rb:8:in `<class:Ticket>'
+  app/models/ticket.rb:1:in `<top (required)>'
+  app/views/projects/show.html.erb:13:in `_app_views_projects_show_html_erb__4019741000873484689_70128382036500'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.8ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2013-08-05 16:24:05 -0700
+Processing by Admin::BaseController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  Rendered admin/base/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-05 16:24:05 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-08-05 16:24:06 -0700
+Served asset /projects.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.css?body=1" for 127.0.0.1 at 2013-08-05 16:24:06 -0700
+Served asset /admin/users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2013-08-05 16:24:06 -0700
+Served asset /tickets.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-05 16:24:06 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-08-05 16:24:06 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-05 16:24:06 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.js?body=1" for 127.0.0.1 at 2013-08-05 16:24:06 -0700
+Served asset /admin/users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2013-08-05 16:24:06 -0700
+Served asset /tickets.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-08-05 16:24:06 -0700
+Served asset /projects.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-08-05 16:24:06 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-05 16:24:06 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2013-08-05 16:24:08 -0700
+Processing by Admin::UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY email[0m
+  Rendered admin/users/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 20ms (Views: 17.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/admin/users.css?body=1" for 127.0.0.1 at 2013-08-05 16:24:08 -0700
+Served asset /admin/users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2013-08-05 16:24:08 -0700
+Served asset /tickets.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-08-05 16:24:08 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-08-05 16:24:08 -0700
+Served asset /projects.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-05 16:24:08 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-05 16:24:08 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-05 16:24:08 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.js?body=1" for 127.0.0.1 at 2013-08-05 16:24:08 -0700
+Served asset /admin/users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-08-05 16:24:08 -0700
+Served asset /projects.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2013-08-05 16:24:08 -0700
+Served asset /tickets.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-05 16:24:08 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-08-05 16:24:08 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2013-08-05 16:26:25 -0700
+Processing by Admin::UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY email[0m
+  Rendered admin/users/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 56ms (Views: 16.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-05 16:26:25 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-05 16:26:25 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2013-08-05 16:26:25 -0700
+Served asset /tickets.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-08-05 16:26:25 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.css?body=1" for 127.0.0.1 at 2013-08-05 16:26:25 -0700
+Served asset /admin/users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-08-05 16:26:25 -0700
+Served asset /projects.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-05 16:26:25 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.js?body=1" for 127.0.0.1 at 2013-08-05 16:26:25 -0700
+Served asset /admin/users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-08-05 16:26:25 -0700
+Served asset /projects.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-08-05 16:26:25 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2013-08-05 16:26:25 -0700
+Served asset /tickets.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-05 16:26:25 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2013-08-05 16:26:40 -0700
+Processing by Admin::UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY email[0m
+  Rendered admin/users/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-05 16:26:40 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-08-05 16:26:40 -0700
+Served asset /projects.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-08-05 16:26:40 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2013-08-05 16:26:40 -0700
+Served asset /tickets.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-05 16:26:40 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.css?body=1" for 127.0.0.1 at 2013-08-05 16:26:40 -0700
+Served asset /admin/users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-05 16:26:40 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.js?body=1" for 127.0.0.1 at 2013-08-05 16:26:40 -0700
+Served asset /admin/users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-08-05 16:26:40 -0700
+Served asset /projects.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2013-08-05 16:26:40 -0700
+Served asset /tickets.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-08-05 16:26:40 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-05 16:26:40 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2013-08-05 16:26:54 -0700
+Processing by Admin::BaseController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  Rendered admin/base/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-05 16:26:54 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.css?body=1" for 127.0.0.1 at 2013-08-05 16:26:54 -0700
+Served asset /admin/users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2013-08-05 16:26:54 -0700
+Served asset /tickets.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-08-05 16:26:54 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-08-05 16:26:54 -0700
+Served asset /projects.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-05 16:26:54 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-05 16:26:54 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.js?body=1" for 127.0.0.1 at 2013-08-05 16:26:54 -0700
+Served asset /admin/users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-08-05 16:26:54 -0700
+Served asset /projects.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2013-08-05 16:26:54 -0700
+Served asset /tickets.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-08-05 16:26:54 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-05 16:26:54 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/users" for 127.0.0.1 at 2013-08-05 16:30:26 -0700
+Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" ORDER BY email
+  Rendered admin/users/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 36ms (Views: 17.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-05 16:30:26 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-08-05 16:30:26 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2013-08-05 16:30:26 -0700
+Served asset /tickets.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-05 16:30:26 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-05 16:30:26 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-08-05 16:30:26 -0700
+Served asset /projects.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.css?body=1" for 127.0.0.1 at 2013-08-05 16:30:26 -0700
+Served asset /admin/users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.js?body=1" for 127.0.0.1 at 2013-08-05 16:30:26 -0700
+Served asset /admin/users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-08-05 16:30:26 -0700
+Served asset /projects.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2013-08-05 16:30:26 -0700
+Served asset /tickets.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-08-05 16:30:26 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-05 16:30:26 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-05 16:30:26 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/tickets" for 127.0.0.1 at 2013-08-05 16:30:38 -0700
+
+ActionController::RoutingError (No route matches [GET] "/tickets"):
+  actionpack (3.2.13) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.13) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.13) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.13) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.13) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.13) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.13) lib/rails/engine.rb:479:in `call'
+  railties (3.2.13) lib/rails/application.rb:223:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.13) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /usr/local/rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.0.0-p247/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-05 16:30:44 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" 
+  Rendered projects/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 24ms (Views: 16.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-05 16:30:44 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.css?body=1" for 127.0.0.1 at 2013-08-05 16:30:44 -0700
+Served asset /admin/users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-08-05 16:30:44 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2013-08-05 16:30:44 -0700
+Served asset /tickets.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-08-05 16:30:44 -0700
+Served asset /projects.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-05 16:30:44 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-05 16:30:44 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.js?body=1" for 127.0.0.1 at 2013-08-05 16:30:44 -0700
+Served asset /admin/users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-08-05 16:30:44 -0700
+Served asset /projects.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2013-08-05 16:30:44 -0700
+Served asset /tickets.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-08-05 16:30:44 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-05 16:30:44 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateProjects (20130710231522)
+Migrating to CreateTickets (20130715202414)
+Migrating to DeviseCreateUsers (20130716220503)
+Migrating to AddConfirmableFieldsToUsers (20130716224144)
+Migrating to AddUserIdToTickets (20130716234840)
+Migrating to AddAdminToUsers (20130717205652)
+Migrating to CreatePermissions (20130719154524)
+Migrating to AddAttachmentAssetToTicket (20130805230031)
+Migrating to CreateAssets (20130806000711)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateProjects (20130710231522)
+Migrating to CreateTickets (20130715202414)
+Migrating to DeviseCreateUsers (20130716220503)
+Migrating to AddConfirmableFieldsToUsers (20130716224144)
+Migrating to AddUserIdToTickets (20130716234840)
+Migrating to AddAdminToUsers (20130717205652)
+Migrating to CreatePermissions (20130719154524)
+Migrating to AddAttachmentAssetToTicket (20130805230031)
+Migrating to CreateAssets (20130806000711)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "assets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "asset_file_name" varchar(255), "asset_file_size" integer, "asset_content_type" varchar(255), "asset_updated_at" datetime, "ticket_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.4ms)[0m  [1mCREATE TEMPORARY TABLE "altered_tickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "project_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "asset_file_name" varchar(255), "asset_content_type" varchar(255), "asset_file_size" integer, "asset_updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  CREATE INDEX "temp_index_altered_tickets_on_user_id" ON "altered_tickets" ("user_id")
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "temp_index_altered_tickets_on_project_id" ON "altered_tickets" ("project_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "tickets"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "tickets"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "tickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "project_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "asset_content_type" varchar(255), "asset_file_size" integer, "asset_updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_tickets_on_project_id" ON "tickets" ("project_id")[0m
+  [1m[35m (0.1ms)[0m  CREATE INDEX "index_tickets_on_user_id" ON "tickets" ("user_id")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "altered_tickets"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "altered_tickets"
+  [1m[36m (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "altered_tickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "project_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "asset_content_type" varchar(255), "asset_file_size" integer, "asset_updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  CREATE INDEX "temp_index_altered_tickets_on_user_id" ON "altered_tickets" ("user_id")
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "temp_index_altered_tickets_on_project_id" ON "altered_tickets" ("project_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "tickets"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "tickets"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "tickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "project_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "asset_content_type" varchar(255), "asset_updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_tickets_on_project_id" ON "tickets" ("project_id")[0m
+  [1m[35m (0.1ms)[0m  CREATE INDEX "index_tickets_on_user_id" ON "tickets" ("user_id")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "altered_tickets"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "altered_tickets"
+  [1m[36m (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "altered_tickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "project_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "asset_content_type" varchar(255), "asset_updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  CREATE INDEX "temp_index_altered_tickets_on_user_id" ON "altered_tickets" ("user_id")
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "temp_index_altered_tickets_on_project_id" ON "altered_tickets" ("project_id")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "tickets"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "tickets"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "tickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "project_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "asset_updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_tickets_on_project_id" ON "tickets" ("project_id")[0m
+  [1m[35m (0.1ms)[0m  CREATE INDEX "index_tickets_on_user_id" ON "tickets" ("user_id")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "altered_tickets"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "altered_tickets"
+  [1m[36m (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "altered_tickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "project_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "asset_updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  CREATE INDEX "temp_index_altered_tickets_on_user_id" ON "altered_tickets" ("user_id")
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "temp_index_altered_tickets_on_project_id" ON "altered_tickets" ("project_id")[0m
+  [1m[35m (0.0ms)[0m  SELECT * FROM "tickets"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "tickets"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "tickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "project_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) 
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_tickets_on_project_id" ON "tickets" ("project_id")[0m
+  [1m[35m (0.1ms)[0m  CREATE INDEX "index_tickets_on_user_id" ON "tickets" ("user_id")
+  [1m[36m (0.0ms)[0m  [1mSELECT * FROM "altered_tickets"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "altered_tickets"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130806000711')[0m
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (2.8ms)[0m  [1mCREATE TABLE "assets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "asset_file_name" varchar(255), "asset_file_size" integer, "asset_content_type" varchar(255), "asset_updated_at" datetime, "ticket_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "permissions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "thing_id" integer, "thing_type" varchar(255), "action" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "tickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "project_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) 
+  [1m[36m (0.9ms)[0m  [1mCREATE INDEX "index_tickets_on_project_id" ON "tickets" ("project_id")[0m
+  [1m[35m (0.9ms)[0m  CREATE INDEX "index_tickets_on_user_id" ON "tickets" ("user_id")
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "confirmation_token" varchar(255), "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar(255), "admin" boolean DEFAULT 'f') [0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130806000711')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130710231522')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130715202414')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130716220503')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130716224144')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130716234840')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130717205652')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130719154524')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130805230031')[0m
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-05 17:15:36 -0700
+Processing by ProjectsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" 
+  Rendered projects/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 94ms (Views: 67.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-05 17:15:36 -0700
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2013-08-05 17:15:36 -0700
+Served asset /tickets.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-05 17:15:36 -0700
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/admin/users.css?body=1" for 127.0.0.1 at 2013-08-05 17:15:36 -0700
+Served asset /admin/users.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-08-05 17:15:36 -0700
+Served asset /projects.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-08-05 17:15:36 -0700
+Served asset /users.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-05 17:15:36 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/admin/users.js?body=1" for 127.0.0.1 at 2013-08-05 17:15:36 -0700
+Served asset /admin/users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-08-05 17:15:36 -0700
+Served asset /projects.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2013-08-05 17:15:36 -0700
+Served asset /tickets.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-08-05 17:15:36 -0700
+Served asset /users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-05 17:15:36 -0700
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/projects/2" for 127.0.0.1 at 2013-08-05 17:15:43 -0700
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mPermission Load (0.1ms)[0m  [1mSELECT "permissions".* FROM "permissions" WHERE "permissions"."user_id" = 1[0m
+  [1m[35mTicket Load (0.1ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."project_id" = 2
+  Rendered projects/show.html.erb within layouts/application (54.5ms)
+Completed 200 OK in 78ms (Views: 70.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-05 17:15:43 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.css?body=1" for 127.0.0.1 at 2013-08-05 17:15:43 -0700
+Served asset /admin/users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-05 17:15:43 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-08-05 17:15:43 -0700
+Served asset /projects.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2013-08-05 17:15:43 -0700
+Served asset /tickets.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-08-05 17:15:43 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-05 17:15:43 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.js?body=1" for 127.0.0.1 at 2013-08-05 17:15:43 -0700
+Served asset /admin/users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2013-08-05 17:15:43 -0700
+Served asset /tickets.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-08-05 17:15:43 -0700
+Served asset /projects.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-08-05 17:15:43 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-05 17:15:43 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/projects/2/tickets/new" for 127.0.0.1 at 2013-08-05 17:15:47 -0700
+Processing by TicketsController#new as HTML
+  Parameters: {"project_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered tickets/_form.html.erb (11.3ms)
+  Rendered tickets/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 39ms (Views: 30.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-05 17:15:47 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.css?body=1" for 127.0.0.1 at 2013-08-05 17:15:47 -0700
+Served asset /admin/users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-08-05 17:15:47 -0700
+Served asset /projects.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2013-08-05 17:15:47 -0700
+Served asset /tickets.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-08-05 17:15:47 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-05 17:15:47 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-05 17:15:47 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.js?body=1" for 127.0.0.1 at 2013-08-05 17:15:47 -0700
+Served asset /admin/users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2013-08-05 17:15:47 -0700
+Served asset /tickets.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-08-05 17:15:47 -0700
+Served asset /projects.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-08-05 17:15:47 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-05 17:15:47 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/projects/2/tickets/new" for 127.0.0.1 at 2013-08-05 17:16:49 -0700
+Processing by TicketsController#new as HTML
+  Parameters: {"project_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered tickets/_form.html.erb (2.8ms)
+  Rendered tickets/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/admin/users.css?body=1" for 127.0.0.1 at 2013-08-05 17:16:49 -0700
+Served asset /admin/users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-08-05 17:16:49 -0700
+Served asset /projects.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-05 17:16:49 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2013-08-05 17:16:49 -0700
+Served asset /tickets.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-05 17:16:49 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-08-05 17:16:49 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-05 17:16:49 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-08-05 17:16:49 -0700
+Served asset /projects.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.js?body=1" for 127.0.0.1 at 2013-08-05 17:16:49 -0700
+Served asset /admin/users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2013-08-05 17:16:49 -0700
+Served asset /tickets.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-08-05 17:16:49 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-05 17:16:49 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/projects/2/tickets/new" for 127.0.0.1 at 2013-08-06 07:48:12 -0700
+Processing by TicketsController#new as HTML
+  Parameters: {"project_id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", "2"]]
+[paperclip] Duplicate URL for asset with /system/:attachment/:id/:style/:filename. This will clash with attachment defined in Ticket class
+  Rendered tickets/_form.html.erb (10.9ms)
+  Rendered tickets/new.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 454ms (Views: 30.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/admin/users.css?body=1" for 127.0.0.1 at 2013-08-06 07:48:13 -0700
+Served asset /admin/users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-06 07:48:13 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-08-06 07:48:13 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2013-08-06 07:48:13 -0700
+Served asset /tickets.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-08-06 07:48:13 -0700
+Served asset /projects.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-06 07:48:13 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-06 07:48:13 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.js?body=1" for 127.0.0.1 at 2013-08-06 07:48:13 -0700
+Served asset /admin/users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-08-06 07:48:13 -0700
+Served asset /projects.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2013-08-06 07:48:13 -0700
+Served asset /tickets.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-08-06 07:48:13 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-06 07:48:13 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/projects/2/tickets" for 127.0.0.1 at 2013-08-06 07:50:30 -0700
+Processing by TicketsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ebg4rTfRmWkgC3FdqcHFsBkWiteMMn9JSHb+zTw3XlE=", "ticket"=>{"title"=>"Random files", "description"=>"A Tesla pic and some other stuff", "assets_attributes"=>{"0"=>{"asset"=>#<ActionDispatch::Http::UploadedFile:0x007f8acc60feb0 @original_filename="IMG_0048.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"ticket[assets_attributes][0][asset]\"; filename=\"IMG_0048.JPG\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<Tempfile:/var/folders/b_/64nqw5t52b91cy3l8nk5jgs80000gn/T/RackMultipart20130806-55033-1i587hm>>}, "1"=>{"asset"=>#<ActionDispatch::Http::UploadedFile:0x007f8acc68fe30 @original_filename="Command Line.txt", @content_type="text/plain", @headers="Content-Disposition: form-data; name=\"ticket[assets_attributes][1][asset]\"; filename=\"Command Line.txt\"\r\nContent-Type: text/plain\r\n", @tempfile=#<Tempfile:/var/folders/b_/64nqw5t52b91cy3l8nk5jgs80000gn/T/RackMultipart20130806-55033-1h90bar>>}, "2"=>{"asset"=>#<ActionDispatch::Http::UploadedFile:0x007f8acc6ee020 @original_filename="Sublime 2 keystrokes.txt", @content_type="text/plain", @headers="Content-Disposition: form-data; name=\"ticket[assets_attributes][2][asset]\"; filename=\"Sublime 2 keystrokes.txt\"\r\nContent-Type: text/plain\r\n", @tempfile=#<Tempfile:/var/folders/b_/64nqw5t52b91cy3l8nk5jgs80000gn/T/RackMultipart20130806-55033-116qi0a>>}}}, "commit"=>"Create Ticket", "project_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mPermission Load (0.1ms)[0m  [1mSELECT "permissions".* FROM "permissions" WHERE "permissions"."user_id" = 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (3.9ms)[0m  [1mINSERT INTO "tickets" ("created_at", "description", "project_id", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 06 Aug 2013 14:50:30 UTC +00:00], ["description", "A Tesla pic and some other stuff"], ["project_id", 2], ["title", "Random files"], ["updated_at", Tue, 06 Aug 2013 14:50:30 UTC +00:00], ["user_id", 1]]
+Binary data inserted for `string` type on column `asset_content_type`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "assets" ("asset_content_type", "asset_file_name", "asset_file_size", "asset_updated_at", "created_at", "ticket_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["asset_content_type", "image/jpeg"], ["asset_file_name", "IMG_0048.JPG"], ["asset_file_size", 14290], ["asset_updated_at", Tue, 06 Aug 2013 14:50:30 UTC +00:00], ["created_at", Tue, 06 Aug 2013 14:50:30 UTC +00:00], ["ticket_id", 1], ["updated_at", Tue, 06 Aug 2013 14:50:30 UTC +00:00]]
+[paperclip] Saving attachments.
+[paperclip] saving /Users/Laptop1/ticketee/public/system/assets/1/original/IMG_0048.JPG
+Binary data inserted for `string` type on column `asset_content_type`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "assets" ("asset_content_type", "asset_file_name", "asset_file_size", "asset_updated_at", "created_at", "ticket_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["asset_content_type", "text/plain"], ["asset_file_name", "Command_Line.txt"], ["asset_file_size", 158], ["asset_updated_at", Tue, 06 Aug 2013 14:50:30 UTC +00:00], ["created_at", Tue, 06 Aug 2013 14:50:30 UTC +00:00], ["ticket_id", 1], ["updated_at", Tue, 06 Aug 2013 14:50:30 UTC +00:00]]
+[paperclip] Saving attachments.
+[paperclip] saving /Users/Laptop1/ticketee/public/system/assets/2/original/Command_Line.txt
+Binary data inserted for `string` type on column `asset_content_type`
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "assets" ("asset_content_type", "asset_file_name", "asset_file_size", "asset_updated_at", "created_at", "ticket_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["asset_content_type", "text/plain"], ["asset_file_name", "Sublime_2_keystrokes.txt"], ["asset_file_size", 661], ["asset_updated_at", Tue, 06 Aug 2013 14:50:30 UTC +00:00], ["created_at", Tue, 06 Aug 2013 14:50:30 UTC +00:00], ["ticket_id", 1], ["updated_at", Tue, 06 Aug 2013 14:50:30 UTC +00:00]]
+[paperclip] Saving attachments.
+[paperclip] saving /Users/Laptop1/ticketee/public/system/assets/3/original/Sublime_2_keystrokes.txt
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/projects/2/tickets/1
+Completed 302 Found in 38ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/projects/2/tickets/1" for 127.0.0.1 at 2013-08-06 07:50:30 -0700
+Processing by TicketsController#show as HTML
+  Parameters: {"project_id"=>"2", "id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mTicket Load (0.1ms)[0m  SELECT "tickets".* FROM "tickets" WHERE "tickets"."project_id" = 2 AND "tickets"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mPermission Load (0.2ms)[0m  SELECT "permissions".* FROM "permissions" WHERE "permissions"."user_id" = 1
+  [1m[36mAsset Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "assets" WHERE "assets"."ticket_id" = 1 LIMIT 1[0m
+  [1m[35mAsset Load (0.1ms)[0m  SELECT "assets".* FROM "assets" WHERE "assets"."ticket_id" = 1
+  Rendered tickets/show.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 42ms (Views: 38.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-06 07:50:30 -0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.css?body=1" for 127.0.0.1 at 2013-08-06 07:50:30 -0700
+Served asset /tickets.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.css?body=1" for 127.0.0.1 at 2013-08-06 07:50:30 -0700
+Served asset /projects.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-08-06 07:50:30 -0700
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.css?body=1" for 127.0.0.1 at 2013-08-06 07:50:30 -0700
+Served asset /admin/users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-06 07:50:30 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-06 07:50:30 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/projects.js?body=1" for 127.0.0.1 at 2013-08-06 07:50:30 -0700
+Served asset /projects.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admin/users.js?body=1" for 127.0.0.1 at 2013-08-06 07:50:30 -0700
+Served asset /admin/users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tickets.js?body=1" for 127.0.0.1 at 2013-08-06 07:50:30 -0700
+Served asset /tickets.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-08-06 07:50:30 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-06 07:50:30 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "assets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "asset_file_name" varchar(255), "asset_file_size" integer, "asset_content_type" varchar(255), "asset_updated_at" datetime, "ticket_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "permissions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "thing_id" integer, "thing_type" varchar(255), "action" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "tickets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "project_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer) 
+  [1m[36m (0.8ms)[0m  [1mCREATE INDEX "index_tickets_on_project_id" ON "tickets" ("project_id")[0m
+  [1m[35m (0.9ms)[0m  CREATE INDEX "index_tickets_on_user_id" ON "tickets" ("user_id")
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "confirmation_token" varchar(255), "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar(255), "admin" boolean DEFAULT 'f') [0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130806000711')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130710231522')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130715202414')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130716220503')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130716224144')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130716234840')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130717205652')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130719154524')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130805230031')[0m

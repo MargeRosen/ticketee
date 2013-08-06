@@ -1,5 +1,9 @@
 # .gitignore
 #Ignore all logfiles and tempfiles
-
+/.bundle
+/db/*.sqlite3
+/log/*.log
+/tmp
+/public/system
 public/source_maps/
 public/assets/source_maps/
